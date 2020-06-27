@@ -428,6 +428,7 @@ footer img {
 	position: relative;
 	margin-right: 2rem;
 	float: right;
+	margin-top: 6em;
 	}
 .form_input >input {
 	background: #FFFFFF;
@@ -528,7 +529,7 @@ color: #000000;
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #151D26;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -558,4 +559,19 @@ color: #000000;
 /*end of signup checkbox customization */
 .margin-bottom{
 	margin-bottom: 1rem;
+}
+/* place order page sign up style*/
+.place-order-signup{
+	width: 13em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+}
+.place-order-signup-btn{
+	margin-left: 10.6em;
+
+}
+.haykpo-btn{
+	background: #151D26;
+	color: #ffffff;
 }

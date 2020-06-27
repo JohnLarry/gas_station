@@ -35,15 +35,7 @@ const  UnsignedinCustomerDetails = () =>{
 
                 </div>
             </div>
-            <div className ="form-row form-margin ">
-                <div className ="col"> 
-                <label className ="container">Sign up to get your purchase history
-                    <input type= "checkbox"/>
-                   <span className ="checkmark"></span>
-                </label>
-                </div>
-               
-            </div>
+            
             <div className ="checkout"><span>Proceed To Checkout</span>
             <img src ="images/checkout_arrow.png"/>
             </div>
