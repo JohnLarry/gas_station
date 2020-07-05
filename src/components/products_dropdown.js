@@ -1,111 +1,66 @@
-import React from 'react'
+import React, {useState} from 'react'
 
+function Product(){
+const [inputList, setInputList] = useState([{productName:"",price:"",quantity:""}]);
 
-class Product extends React.Component{
-constructor(props){
-    super(props);
+const handleAddProductDiv =()=>{
     
-    {/* handleAddProductDiv mornitors the change on the + button on the place order page */}
-    this.handleAddProductDiv = this.handleAddProductDiv.bind(this);
-    this.handleMinusProductDiv = this.handleMinusProductDiv.bind(this);
-    this.a =0;
-    const t =[];
-    this.state ={productdiv:t}
+        setInputList([...inputList, {productName:"",price:"",quantity:""}])
     
-   
+
 }
 
-handleAddProductDiv=()=>{
-    this.a++;
-    let inputDiv = <div className ="form-row form-margin">
-    <div className = "col">
-        
+const handleRemoveProductDiv =(e,index)=>{
+  
+        const list = [...inputList];
+        list.splice(index,1);
+        setInputList(list);
+        setInputList(list);
+    
+    
+    }
+const handleProductDivChange =(e,index)=>{
+    const {name, value} =e.target;
+    const list = [...inputList];
+    list[index,name] = value;
+    setInputList(list);
 
-        <select className ="form-control">
-            <option name = "fuel">Fuel</option>
-            <option name = "gas">Gas</option>
-            <option name = "diesel">Diesel</option>
-        </select></div>
-    <div className = "col">
-        
-        <input type ="text" className = "form-control"/>
-    </div>
-    <div className = "col">
-        
-        <input type ="text" className = "form-control"/>
+
+    
+    }
+
+  return( 
+ inputList.map((forminput, index)=>{
+     return(
+         
+        <React.Fragment>
+        <div className ="form-row form-margin">
+        <div className = "col">
+            <label  >Product</label>
+
+            <select name="productName" className ="form-control" value ={forminput.productName} onChange={e=>handleProductDivChange(e,index)}>
+                <option  name = "fuel">Fuel</option>
+                <option   name = "gas">Gas</option>
+                <option name = "diesel">Diesel</option>
+            </select></div>
+        <div className = "col">
+            <label  >Amount(NGN)</label>
+            <input type ="text" value ={forminput.price} onChange={e=>handleProductDivChange(e,index)} className = "form-control"/>
         </div>
-        
-            <input  type ="button" value ="-" className ="btn" onClick ={this.handleMinusProductDiv(this.a)} />
-        
-        
-        
-</div>;
-
-    const d =[].push(inputDiv);
-    if(this.state.productdiv.length<2){
-
-
-    this.setState( state =>{
-        const productdiv = this.state.productdiv.concat(inputDiv);
-        return{
-            productdiv,
-
-        };
-}); }
-};
-handleMinusProductDiv=(a)=>{
-    this.setState(
-        state =>{
-            const productdiv = this.state.productdiv.splice((a,1));
-            return{
-                productdiv,
-            };
-
-        }
-    );
-};
-    render(){
-         {/*const showProductDive = this.state.productdiv.map(inputItemFields =>(
-         {inputItemFields}));*/}
-           
-        
-        return(
-            
-            <React.Fragment>
-        
-        
-        
-            <div className ="form-row form-margin">
-                <div className = "col">
-                    <label  >Product</label>
-
-                    <select className ="form-control">
-                        <option name = "fuel">Fuel</option>
-                        <option name = "gas">Gas</option>
-                        <option name = "diesel">Diesel</option>
-                    </select></div>
-                <div className = "col">
-                    <label  >Amount(NGN)</label>
-                    <input type ="text" className = "form-control"/>
-                </div>
-                <div className = "col">
-                    <label  >Quantity(Ltr/KG)</label>
-                    <input type ="text" className = "form-control"/>
-                    </div>
-                    <input type ="button" value ="+" className ="btn" onClick ={this.handleAddProductDiv} />
+        <div className = "col">
+            <label  >Quantity(Ltr/KG)</label>
+            <input type ="text" value ={forminput.quantity} onChange ={e =>handleProductDivChange(e,index)} className = "form-control"/>
+            </div>
+            <div className="col">
+            {inputList.length-1==index &&<input type ="button" value ="+" className ="btn" onClick ={handleAddProductDiv} />}
+            {inputList.length!==1 && <input type ="button" value ="-" className ="btn" onClick ={()=>handleRemoveProductDiv(index)} />}
             </div>
             
-                {
-                    this.state.productdiv.map((items, index)=>(
-                      <div key ={index}>{items}</div>  
-                    ))
-               }
-            
-        </React.Fragment>);
-            
-        
-    }
+    </div>
+    <div>{JSON.stringify(inputList)}</div>
+    </React.Fragment>
+     )})
+ );
+
 }
-
-
 export default Product;
