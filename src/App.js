@@ -63,9 +63,8 @@ function App() {
           <div className ="order_form">
             <div className ="order_form_inner">
               <Product/>
-              <AddToCart/>
-              <UnsignedinCustomerDetails/>
-              <PlaceOrderPageSignUp/>
+              
+              <button type ='submit'>Proceed to checkout</button>
           </div>
           </div>
         </Route>

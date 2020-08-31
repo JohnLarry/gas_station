@@ -11,27 +11,27 @@ const  UnsignedinCustomerDetails = () =>{
             <div className ="form-row form-margin margin-bottom">
                 <div className ="col">
                     
-                    <input type ="text" className ="form-control" placeholder ="Full name"/>
+                    <input type ="text" name='fullname' className ="form-control" placeholder ="Full name"/>
                 </div>
             </div>
             <div className ="form-row form-margin margin-bottom">
                 <div className ="col">
-                    <input type ="email" placeholder ="Email" className ="form-control"/>
+                    <input type ="email" name ="email" placeholder ="Email" className ="form-control"/>
                 </div>
                 <div className ="col">
-                    <input type ="tel" placeholder ="Phone" className ="form-control" />
+                    <input type ="tel" name='tel' placeholder ="Phone" className ="form-control" />
                 </div>
             </div>
             <div className ="form-row form-margin margin-bottom">
                 <div className ="col">
-                    <select className ="">
+                    <select className ="" name ='zone'>
                         <option>Zone</option>
-                        <option>Agege</option>
-                        <option>Ikeja</option>
+                        <option value ='Agege'>Agege</option>
+                        <option value ='Ikeja'>Ikeja</option>
                     </select>
                 </div>
                 <div className ="col">
-                    <input className ="form-control" placeholder ="Delivery address"/>
+                    <input className ="form-control" name ='address' placeholder ="Delivery address"/>
 
                 </div>
             </div>
