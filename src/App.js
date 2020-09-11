@@ -16,8 +16,8 @@ import HowItWorks from './components/how_it_works';
 import Features from './components/features';
 import OurPartners from './components/ourpartners';
 import Footer from './components/footer';
-import PlaceOrder from './components/placeorder';
-import Product from './components/products_dropdown';
+import PlaceOrderPage from './components/placeorder';
+import Product from './components/productdrop';
 import AddToCart from './components/addtocart';
 import UnsignedinCustomerDetails from './components/unsignedincustomerdetails';
 import PlaceOrderPageSignUp from './components/place_order_page_signup';
@@ -34,7 +34,7 @@ const Navigator =() =>{
     <BrowserRouter>
     <Route path ="/" component ={App}></Route>
     <Route path ='/placeorder'> 
-    <PlaceOrder/>
+    <PlaceOrderPage/>
     <AddToCart/>
     </Route>
     </BrowserRouter>
@@ -61,11 +61,9 @@ function App() {
         {/*add items and proceed to place order form router*/}
         <Route path ="/order">
           <div className ="order_form">
-            <div className ="order_form_inner">
-              <Product/>
-              
-              <button type ='submit'>Proceed to checkout</button>
-          </div>
+            <form>
+              <PlaceOrderPage/>
+          </form>
           </div>
         </Route>
         </BrowserRouter>

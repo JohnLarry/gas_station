@@ -1,12 +1,13 @@
 
 import React, { useState } from "react";
+
 //declear the price per litre for fuel and diesel and 1KG for gas
-const fuel_price      ='150';
-const fuel_quantity   = '1';
-const gas_price       = '350';
-const gas_quantity    = '1';
-const diesel_price    = '200';
-const diesel_quantity = '1';
+export const fuel_price      =150;
+export const fuel_quantity   = '1';
+export const gas_price       = '350';
+export const gas_quantity    = '1';
+export const diesel_price    = '200';
+export const diesel_quantity = '1';
 function Product() {
   //inputlist for holding the added cart details
   const [inputList, setInputList] = useState([{ product:"fuel",
@@ -15,39 +16,10 @@ function Product() {
                                                }]
                                               );
 
-  const [signUpButton, setSignUpButton] = useState([{checked:false}])                    
+                  
 
-//signup click on change listener
-const handleSignUpChange=()=>{
-  //set state of signup button
-  setSignUpButton({
-      checked: !signUpButton.checked
-                     });
-                              }
-       
-//display signup if signup button is checked
-const showSignup =signUpButton.checked ?
-        
-        <React.Fragment>
-        
-        <div className ="form-row form-margin place-order-signup">
-            <div className ="col">
-                <input type ="password" placeholder =" Create Password" className ="form-control"/>
-            </div>
-            
-        </div>
 
-        <div className ="form-row form-margin place-order-signup">
-            <div className ="col">
-                <input type ="password" placeholder ="Confirm Password" className ="form-control"/>
-            </div>
-            
-        </div>
-        <div className ="form-row form-margin place-order-signup-btn">
-            <input type ="submit"  value ="Sign up"className ="btn  haykpo-btn"/>
-        </div>
-
-    </React.Fragment>:null;
+ 
 
 
 
@@ -135,110 +107,32 @@ const showSignup =signUpButton.checked ?
         return (
           <React.Fragment>
               <div className ="form-row form-margin">
-          <div className="col">
-          <select name="product" className ="form-control"  value ={x.product} 
-       onChange={e => handleInputChange(e, i)}>
-                <option   value = "fuel">Fuel</option>
-                <option   value = "gas">Gas</option>
-                <option   value = "diesel">Diesel</option>
-            </select></div>
-             <div className="col">
-            <input
-             
-             className ="form-control"
-              name="price"
-			  placeholder=""
-              value={x.price}
-              onChange={e => handleInputChange(e, i)}
-            /></div>
-             <div className="col">
-            <input
-              className ="form-control"
-              name="quantity"
-			  placeholder="Enter"
-              value={x.quantity}
-              onChange={e => handleInputChange(e, i)}
-            /></div>
-            <div className="col">
-    {inputList.length!==1 && <input type ="button" value ="-" className ="btn" onClick={() => handleRemoveClick(i)} />}
-    {inputList.length-1==i &&inputList.length < 3 && <input type ="button" value ="+" className ="btn" onClick={handleAddClick}/>}
-          </div>
+                  <div className="col">
+                      <select name="products" className ="form-control"  value ={x.product} 
+                              onChange={e => handleInputChange(e, i)}>
+                          <option   value = "fuel">Fuel</option>
+                          <option   value = "gas">Gas</option>
+                          <option   value = "diesel">Diesel</option>
+                      </select>
+                  </div>
+                  <div className="col">
+                      <input className ="form-control" name="price" placeholder="" value={x.price} onChange={e => handleInputChange(e, i)}/>
+                  </div>
+                  <div className="col"> 
+                      <input className ="form-control" name="quantity" placeholder="Enter" value={x.quantity} onChange={e => handleInputChange(e, i)} />    
+                  </div>
+                  <div className="col">
+                      {inputList.length!==1 && <input type ="button" value ="-" className ="btn" onClick={() => handleRemoveClick(i)} />}
+                      {inputList.length-1==i &&inputList.length < 3 && <input type ="button" value ="+" className ="btn" onClick={handleAddClick}/>}
+                  </div>
           
-          </div>
-
-          
-           
-
-
-
-
-
-
-
+              </div>
 
           </React.Fragment>
-        );
-      })}
-
-
-
-      <div >
-               <img src ="images/Ellipse.png"/> <span>Your details</span>
-            </div>
-            
-           
-            <div className ="form-row form-margin margin-bottom">
-                <div className ="col">
-                    
-                    <input type ="text" name='fullname' className ="form-control" placeholder ="Full name"/>
-                </div>
-            </div>
-            <div className ="form-row form-margin margin-bottom">
-                <div className ="col">
-                    <input type ="email" name ="email" placeholder ="Email" className ="form-control"/>
-                </div>
-                <div className ="col">
-                    <input type ="tel" name='tel' placeholder ="Phone" className ="form-control" />
-                </div>
-            </div>
-            <div className ="form-row form-margin margin-bottom">
-                <div className ="col">
-                    <select className ="" name ='zone'>
-                        <option>Zone</option>
-                        <option value ='Agege'>Agege</option>
-                        <option value ='Ikeja'>Ikeja</option>
-                    </select>
-                </div>
-                <div className ="col">
-                    <input className ="form-control" name ='address' placeholder ="Delivery address"/>
-
-                </div>
-            </div>
-            
-            <div className ="checkout"><span>Proceed To Checkout</span>
-            <img src ="images/checkout_arrow.png"/>
-            </div>
-      
-            <div className ="form-row form-margin ">
-                <div className ="col"> 
-                <label className ="container">Sign up to get your purchase history
-                    <input type= "checkbox"
-                    checked ={ signUpButton.checked }
-                    onChange ={ handleSignUpChange }
-                    />
-                   <span className ="checkmark"></span>
-                </label>
-                </div>
-               
-            </div>
-
-            { showSignup }
-    </div>
-
-
-
-  );
-}
+                );
+                                })
+        }
+       </div> )};
 
 
 export default Product;
