@@ -426,9 +426,10 @@ footer img {
 }
 .checkout {
 	position: relative;
-	margin-right: 2rem;
+	margin-right: 1rem;
+	margin-bottom: 4em;
 	float: right;
-	margin-top: 6em;
+	margin-top: 2em;
 	}
 .form_input >input {
 	background: #FFFFFF;
@@ -447,9 +448,12 @@ footer img {
 .order_form{
 	position: absolute;
 	width: 680px;
-	height: 618px;
+
+	/* height: 100%; */
+
 	left: 196px;
 	top: 77px;
+
 
 	background: #FFFFFF;
 	box-shadow: 0px 4px 50px rgba(45, 156, 219, 0.15);
@@ -569,6 +573,7 @@ color: #000000;
 }
 .place-order-signup-btn{
 	margin-left: 10.6em;
+	margin-bottom: 1em;
 
 }
 .haykpo-btn{
