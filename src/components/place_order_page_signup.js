@@ -4,21 +4,24 @@ import { useForm } from 'react-hook-form';
 function  PlaceOrderPageSignUp(props){
     
    
-         const { handleSubmit, register, errors } = useForm({
-  mode: 'onBlur',
-  reValidateMode: 'onChange',
-  defaultValues: {},
-  resolver: undefined,
-  context: undefined,
-  criteriaMode: "firstError",
-  shouldFocusError: true,
-  shouldUnregister: true,
-});
+         const { register, errors,getValues,handleSubmit } = useForm({
+                  mode: 'onBlur',
+                  reValidateMode: 'onChange',
+                  defaultValues: {},
+                  resolver: undefined,
+                  context: undefined,
+                  criteriaMode: "firstError",
+                  shouldFocusError: true,
+                  shouldUnregister: true,
+                });    
+         const onSubmit = data =>{
+          console.log(data);
+         }
         const {shoperPersonalDetailsHandler,handleSignUpCheckBoxChange} =props;
         const showSignup = props.myStateData.checked ?
         
         
-        <React.Fragment>
+        <div>
         
         <div className ="form-row form-margin place-order-signup">
             <div className ="col">
@@ -41,8 +44,13 @@ function  PlaceOrderPageSignUp(props){
                 placeholder ="Confirm Password" className ="form-control" 
                 onChange ={shoperPersonalDetailsHandler}
                ref={register({
-                      required: "Password confirmation is required",})}/>
-                        
+                      required: "Password confirmation is required",
+                      validate: {
+                      matchesPreviousPassword: (value) => {
+                      const { password } = getValues();
+                      return password === value || 'Passwords should match!';
+                    },},})}/>
+                                
                 {errors.confirmPassword && (
           <p style={{ color: "red" }}>{errors.confirmPassword.message}</p>
              )}
@@ -50,10 +58,10 @@ function  PlaceOrderPageSignUp(props){
             
         </div>
         <div className ="form-row form-margin place-order-signup-btn">
-            <input type ="submit"  value ="Sign up and proceed to checkout"className ="btn  haykpo-btn"/>
+            <input type ="submit" onClick ={handleSubmit(onSubmit)} value ="Sign up and proceed to checkout"className ="btn  haykpo-btn"/>
         </div>
 
-    </React.Fragment>:<div className ="checkout"><span>Proceed To Checkout</span>
+    </div>:<div className ="form-row  checkout" onClick ={handleSubmit(onSubmit)} ><span>Proceed To Checkout</span>
             <img src ="images/checkout_arrow.png" type= "submit" alt = "proceed to checkout"
             />
 

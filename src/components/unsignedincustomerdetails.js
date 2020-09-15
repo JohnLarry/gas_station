@@ -14,7 +14,9 @@ function UnsignedinCustomerDetails(props) {
   shouldFocusError: true,
   shouldUnregister: true,
 });
-    const onBlur = values => console.log(values);
+    const onSubmit = data =>{
+          console.log(data);
+         }
 
     return(
         <React.Fragment>
@@ -89,6 +91,7 @@ function UnsignedinCustomerDetails(props) {
 
 
                 </div>
+               
             </div>
             
             

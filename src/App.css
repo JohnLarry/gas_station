@@ -27,6 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+.product_purchase_bg{
+  background: url('./product_bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  height: 700px;
+}
 
 @keyframes App-logo-spin {
   from {

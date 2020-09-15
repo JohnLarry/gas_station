@@ -4,6 +4,7 @@ import Product from './productdrop';
 import AddToCart from './addtocart';
 import UnsignedinCustomerDetails from './unsignedincustomerdetails';
 import PlaceOrderPageSignUp from './place_order_page_signup';
+import Payment from './paymentone';
 import {Route, BrowserRouter, Switch} from 'react-router-dom'
 import {fuel_price,fuel_quantity,gas_price,gas_quantity,diesel_price,diesel_quantity} from './products_dropdown';
 class PlaceOrderPage extends Component {
@@ -26,13 +27,13 @@ class PlaceOrderPage extends Component {
 
 	//nextStep function
 	nextStep = () => {
-		const { count } =this.state;
+		let { count } =this.state;
 		this.setState({count:count+=1});
 
 	};
 	//prevStep function
 	prevStep = () => {
-		const { count } =this.state;
+		let { count } =this.state;
 		this.setState({count:count-=1});
 
 	};
@@ -114,6 +115,8 @@ class PlaceOrderPage extends Component {
 
   };
 
+  
+
 	  
 	//Signup checkbox handler
 	handleSignUpCheckBoxChange = () =>{
@@ -139,17 +142,20 @@ class PlaceOrderPage extends Component {
 
 				else{
 					return (<div className ="order_form_inner">
-             <Product productInputChange ={this.
-             productInputChange} handleRemoveClick ={this.handleRemoveClick}
+             <Product 
+             nextStep = {this.nextStep}
+             productInputChange ={this.productInputChange} 
+             handleRemoveClick ={this.handleRemoveClick}
              handleAddClick ={this.handleAddClick} myStateData ={this.state}
-             />
-             <UnsignedinCustomerDetails shoperPersonalDetailsHandler ={this.shoperPersonalDetailsHandler}/>
-             <PlaceOrderPageSignUp myStateData ={this.state} handleSignUpCheckBoxChange ={this.handleSignUpCheckBoxChange} shoperPersonalDetailsHandler ={this.shoperPersonalDetailsHandler}/>
+             shoperPersonalDetailsHandler ={this.shoperPersonalDetailsHandler}
+             handleSignUpCheckBoxChange ={this.handleSignUpCheckBoxChange}/>
+             
+             
           
               </div>);
 				}
 			
-				case 2: return ("Payment page");
+				case 2: return <Payment myStateData ={this.state}/>;
 			}
 
             

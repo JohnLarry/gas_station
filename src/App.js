@@ -1,6 +1,8 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import logo from './logo.svg';
 import './App.css';
+
 
 import Copyright from './components/footer';
 import {Like} from './components/like';
@@ -41,6 +43,8 @@ const Navigator =() =>{
   )
 }
 function App() {
+  
+         
   return (
 
     <div className="App">
@@ -60,11 +64,14 @@ function App() {
       
         {/*add items and proceed to place order form router*/}
         <Route path ="/order">
+        <div className ="product_purchase_bg">
           <div className ="order_form">
-            <form>
+            <form >
               <PlaceOrderPage/>
+              
           </form>
           </div>
+        </div>
         </Route>
         </BrowserRouter>
     </div>
