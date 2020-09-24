@@ -20,13 +20,14 @@ import { usePaystackPayment, PaystackButton, PaystackConsumer } from 'react-pays
     	}
 export default function Payment(props){
 
-	const {myStateData} =props;
+	const {myStateData} = props;
+    const {backToOrderPage} = props;
 	const total_price_array = myStateData.products.map((value) =>(value.price));
 	
 	const total = total_price_array.reduce((val, accVal)=>(val+accVal));
 	console.log(total);
 	
-        const publicKey = 'pk_test_a2b6ae617b67ffe6750e972194feba30d4ac9b7b';
+        const publicKey = 'testkeyisfake';
    
     
 	
@@ -37,7 +38,7 @@ export default function Payment(props){
 			<div className ="row">
 					<div className="col-sm padit"> <h2> Price summary </h2>
 					 <br/>
-					 <h4> ` 20Ltrs of fuel - N12345` </h4>
+					 
 					 <br/>
 					 <br/>
 					 { myStateData.products.map((value, index)=>(
@@ -51,10 +52,10 @@ export default function Payment(props){
 					 </div>
 					<div className="col-sm"> 
 
-         <p>
+         <p >
               <PaystackButton
                 text="Make Payment"
-                class="payButton"
+                className ="btn btn-primary backToHome"
                 callback={callback}
                 close={close}
                 reference={getReference()}
@@ -63,8 +64,9 @@ export default function Payment(props){
                 paystackkey={publicKey}
               />
             </p>
-       
+              <button className ="btn btn-secondary" onClick ={backToOrderPage}> Edit order</button>
             </div>
 			 </div> 
+
 		 </div>);
 }

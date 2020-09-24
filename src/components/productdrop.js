@@ -1,5 +1,5 @@
-
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 //declear the price per litre for fuel and diesel and 1KG for gas
 export const fuel_price      ='150';
@@ -66,11 +66,11 @@ function Product(props) {
             <input type ="submit" onClick ={handleSubmit(onSubmit)} value ="Sign up and proceed to checkout"className ="btn  haykpo-btn"/>
         </div>
 
-    </div>:<div className ="form-row  checkout" onClick ={handleSubmit(nextStep)} ><span>Proceed To Checkout</span>
+    </div>:<React.Fragment><Link to="/"><button className="backToHome">Back to homepage</button></Link><div className ="form-row  checkout" onClick ={handleSubmit(nextStep)} ><span>Proceed To Checkout</span>
             <img src ="images/checkout_arrow.png" type= "submit" alt = "proceed to checkout"
             />
 
-            </div>;
+            </div></React.Fragment>;
   return (
        <React.Fragment>
     <div className="App">
@@ -125,6 +125,7 @@ function Product(props) {
                     <input type ="text" name='fullName'
                      className ="form-control" 
                     placeholder ="Full name" 
+                    value ={myStateData.fullName}
                     onChange ={shoperPersonalDetailsHandler} 
                     ref={register({
                         required: " Name is required", 
@@ -138,6 +139,7 @@ function Product(props) {
             <div className ="form-row form-margin margin-bottom">
                 <div className ="col">
                     <input type ="email" name ="email" placeholder ="Email" 
+                    value ={myStateData.email}
                     className ="form-control" onChange ={shoperPersonalDetailsHandler}
                      ref={register({
                       required: " Email address is required",
@@ -152,6 +154,7 @@ function Product(props) {
                 <div className ="col">
                     <input type ="number" name="phoneNumber" placeholder ="08069744444 " 
                         className ="form-control"
+                        value ={myStateData.phoneNumber}
                         onChange ={shoperPersonalDetailsHandler} 
                        ref={register({
                       required: "Phone number is required",})}/>
@@ -163,7 +166,9 @@ function Product(props) {
             <div className ="form-row form-margin margin-bottom">
                 <div className ="col">
                     <select className ="" name ='zone' 
-                        onChange ={shoperPersonalDetailsHandler} ref={register({
+                        value ={myStateData.zone}
+                        onChange ={shoperPersonalDetailsHandler} 
+                        ref={register({
                       required: "Delivery zone is required",})}>
                         
                         <option value =''>Zone</option>
@@ -176,6 +181,7 @@ function Product(props) {
                 <div className ="col">
                     <input className ="form-control" name ='deliveryAddress' 
                     placeholder ="Delivery address" 
+                    value ={myStateData.deliveryAddress}
                     onChange ={shoperPersonalDetailsHandler}
                      ref={register({
                       required: "Delivery address is required",})}/>
@@ -194,7 +200,7 @@ function Product(props) {
         <React.Fragment>
             <div className ="form-row form-margin ">
                 <div className ="col"> 
-                <label className ="container">Sign up to get your purchase history
+                <label className ="container "> <span className ="getHistory"> Sign up to get your purchase history</span>
                     <input type= "checkbox"
                     checked ={ myStateData.checked}
                     onChange ={ handleSignUpCheckBoxChange }/>

@@ -155,7 +155,7 @@ class PlaceOrderPage extends Component {
               </div>);
 				}
 			
-				case 2: return <Payment myStateData ={this.state}/>;
+				case 2: return <Payment myStateData ={this.state} backToOrderPage = {this.prevStep}/>;
 			}
 
             
