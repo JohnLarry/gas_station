@@ -66,7 +66,7 @@ function Product(props) {
             <input type ="submit" onClick ={handleSubmit(onSubmit)} value ="Sign up and proceed to checkout"className ="btn  haykpo-btn"/>
         </div>
 
-    </div>:<React.Fragment><Link to="/"><button className="backToHome">Back to homepage</button></Link><div className ="form-row  checkout" onClick ={handleSubmit(nextStep)} ><span>Proceed To Checkout</span>
+    </div>:<React.Fragment><Link to="/"><button className="backToHome btn btn-secondary">Back to homepage</button></Link><div className ="form-row  checkout" onClick ={handleSubmit(nextStep)} ><span>Proceed To Checkout</span>
             <img src ="images/checkout_arrow.png" type= "submit" alt = "proceed to checkout"
             />
 
