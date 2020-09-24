@@ -23,7 +23,7 @@ import Product from './components/productdrop';
 import AddToCart from './components/addtocart';
 import UnsignedinCustomerDetails from './components/unsignedincustomerdetails';
 import PlaceOrderPageSignUp from './components/place_order_page_signup';
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import {Route, BrowserRouter, Switch} from 'react-router-dom';
 function Greet(){
   return <h1>Good day </h1>
 }

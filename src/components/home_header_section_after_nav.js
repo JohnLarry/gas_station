@@ -20,7 +20,6 @@ const HomeHeadrSectionAfterNav =() =>{
 	<div className="col-sm-7 pump-handle"> 
 		<div >
 		 
-		 <div className="col-sm-1"><img src="images/Arrow.png"  /></div>
 		 
 		 	</div>
 	</div>

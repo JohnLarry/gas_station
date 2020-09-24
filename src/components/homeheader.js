@@ -6,53 +6,104 @@ const HomeHeader = () =>{
     return(
         <React.Fragment>
         <div className="header">
-            <div className="nav-container">
-                <div className="wrapper">
-                    
-                    
-                    <nav>
             
-                        <div className="logo">
-                            <img src="images/logo.svg"/>
-                        
-            
-                        </div>
-                        <ul className="nav-items">
-                            <Link  to ="/order" ><li className="navhome">Home</li></Link>
-                            <Link  to ="/order" ><li className="navabout" >About </li></Link>
-                            <Link  to ="/order" ><li className="navfag">  FAQ </li></Link>
-                            <Link  to ="/order" > <li className="navcontact" >Contact </li> </Link>
-                        
-                        
-                            <Link className="partner-signin" to ="/order" > <li>  Partner Sign In </li></Link>
                     
-                            <Link  className="customer-signin" to = "/order" > <li>Customer Sign In </li></Link>
-                        </ul>
-                    </nav>
+                  
+<nav class="navbar navbar-expand-lg ">
+
+ <a class="navbar-brand" href="#"><img src="images/logo.svg"/></a>
+  <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon">
+    <i className="fas fa-bars navIcon" ></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse "  id="navbarSupportedContent">
+   
+    <ul class="navbar-nav mr-auto nav-items nav-bg">
+      <li class="nav-item navLink">
+      <Link  to ="/order" className="nav-link " > 
+      </Link></li>
+   <li class="nav-item mobile-nav-style "> <Link  to ="/order" >
+        Home </Link>
+      </li>
+     
+
+    <li class="nav-item mobile-nav-style" >  
+    <Link  to ="/order" >
+        About
+        </Link>
+      </li>
+      
+<li class="nav-item mobile-nav-style">     
+ <Link  to ="/order" >
+       
+          FAQ 
+        </Link>
+        
+      </li>
+      
+     <li class="nav-item mobile-nav-style"> <Link  to ="/order" >
+        Contact </Link>
+      </li>
+      
+            
+       <li className ="list-no-style partner-signin mobile-nav-style"> 
+       <Link className="#" to ="/order" ><span>
+
+        Partner Sign In</span>
+        </Link>
+        </li>
+            
+     
+     <li className ="list-no-style customer-signin white mobile-nav-style">
+     <Link  className="white" to = "/order" > 
+     Customer Sign In </Link></li>
+    
+    </ul>
+    
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+        
+    <div className="row row1top homeage-zindex">
+	   <div className="col">
+    		  <div className="">
+
+                 <img  src="images/Rectangle.png"/>
+                 <span className="">Get fuel delivered to your door </span>
+                 <span className="mobile-confidencetxt"> step with </span>
+
+
+    	       </div>
+	       <div className=" row homeage-zindex">
+                <div className ="col "> 
+                <span className ="confidencetxt">confidence</span>
                 </div>
             </div>
-        
-    <div className="row row1top">
-	<div className="col-sm-5">
-		<div className="rect1">
 
-   <img  src="images/Rectangle.png"/>
-		  <span className="getfuel">Get fuel delivered to your door step with</span>
+	<div className="row bn homeage-zindex">
 
-	</div>
-	<div className=" row confidencetxt"> <p >confidence</p></div>
-	<div className="row bn">
-
-		<a className="buynow" href="#">buy now</a></div>
+	  <Link className="buynow" to="/order">buy now</Link></div>
 	</div>
 
-	<div className="col-sm-7 pump-handle"> 
-		<div >
-		 
-		 <div className="col-sm-1"><img src="images/Arrow.png"  /></div>
-		 
-		 	</div>
-	</div>
+	
 </div>
 
             

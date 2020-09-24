@@ -24,7 +24,9 @@ body{
 .header{
 	background-image: url("../images/Vector.svg");
 	background-repeat: no-repeat;
-	background-position: right;
+	background-position: center;
+	width: 100%;
+	height: auto;
 	
 	
 	
@@ -48,12 +50,16 @@ nav >ul{
 	display: flex;
 	margin-top: 1.5rem;
 }
+.list-no-style{
+	list-style: none;
+}
 .nav-items li {
 	list-style: none;
 	margin-right: 30px
 }
 .nav-items Link{
 	display: flex;
+	justify-content: end;
 }
 .nav-items li a{
 	text-decoration: none;
@@ -106,23 +112,16 @@ text-decoration: none;
 	background-color: #FFFFFF;
 	box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
 	border-radius: 5px;
-	padding-top:11px;
-	 padding-left:11px;
-	 padding-right: 12px;
-	 padding-bottom: 12px; 
-}
+	padding: 5px;
+	}
 .customer-signin{
-	/*margin-left: 0px;*/
 	background-color: #151d26;
 	border: 1px solid #FFFFFF;
 	box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+	color: #fff;
 	border-radius: 5px;
-	padding-top:11px;
-	 padding-left:11px;
-	 padding-right: 12px;
-	 padding-bottom: 12px;
-	 color: #fff;
-	 margin-left: 1rem;
+	padding: 5px;
+	
 }
 .logo {
 	
@@ -150,11 +149,7 @@ text-decoration: none;
 }
 
 .rect2{
-	width: 465.11px;
-	height: 27.59px;
-	left: 48.08px;
-	top: 258.66px;
-
+	
 	font-family: Nunito;
 	font-style: normal;
 	font-weight: 600;
@@ -166,11 +161,6 @@ text-decoration: none;
 
 }
 .rect3{
-	width: 570px;
-	height: 121.41px;
-	left: 26px;
-	top: 295.91px;
-
 	font-family: Nunito;
 	font-style: normal;
 	font-weight: 600;
@@ -181,11 +171,6 @@ text-decoration: none;
 	color: #151D26;
 }
 .buy-now{
-	width: 149px;
-	height: 57px;
-	left: 26px;
-	top: 432px;
-
 	background: #FFFFFF;
 	box-shadow: 0px 4.20968px 26.3105px rgba(0, 0, 0, 0.1);
 	border-radius: 21.0484px;
@@ -209,10 +194,7 @@ text-decoration: none;
 
 
 .rect1 > div {
-	margin-top: 87px
-  	width: 100px;
-  	height: 100px;
-  	border: 2px dashed red;
+	
 }
 
 
@@ -225,8 +207,8 @@ text-decoration: none;
 
 
  .getfuel {
-	width: 465.11px;
-	height: 27.59px;
+	width: 100%;
+	height: auto;
 
 	top: 258.66px;
 
@@ -241,8 +223,7 @@ text-decoration: none;
 	color: #151D26;
 }
 .confidencetxt{
-	width: 570px;
-	height: 121.41px;
+	
 	margin-left: 26px;
 	font-style: normal;
 	font-weight: 400;
@@ -267,6 +248,17 @@ text-decoration: none;
 
 
 }
+.buynowFooter {
+
+	padding: 10px 10px;
+	background: #212529;
+	box-shadow: 0px 4.20968px 26.3105px rgba(0, 0, 0, 0.1);
+	border-radius: 21.0484px;
+	align-content: center;
+	color: #fff;
+	text-transform: uppercase;
+
+	}
 .bn a{
 	text-decoration: none;
 	color: red;
@@ -307,14 +299,8 @@ text-decoration: none;
 }
 
 .square {
-  height: 255px;
-  width: 255px;
-
+	padding: 4px;
   text-align: center;
-  margin-left: 112;
-  
-  margin-right: 92px;
-  margin-top: 110px;
   box-shadow: 0px 4px 10px rgba(45, 156, 219, 0.15);
 }
 
@@ -459,8 +445,6 @@ footer img {
 
 	left: 196px;
 	top: 77px;
-
-
 	background: #FFFFFF;
 	box-shadow: 0px 4px 50px rgba(45, 156, 219, 0.15);
 }
@@ -593,4 +577,86 @@ color: #000000;
 }
 .paybg{
 	background-color: #d3d4d6;
+}
+
+
+@media screen and (max-width: 400px){
+	.nav-bg{
+		position:absolute;
+		background-color: #212529;
+		z-index: 3;
+	}
+	.customer-signin{
+		background-color: inherit;
+		border-radius: 0px;
+		border:none;
+	}
+	.partner-signin{
+		background-color: inherit;
+		border-radius: 0px;
+		border:none;
+	}
+	.mobile-nav-style{
+		border-bottom:1px solid #fff;
+    	padding:5px;
+    	margin:2px;
+    	color: #fff;
+
+	}
+	.mobile-confidencetxt{
+		color: #fff;
+	}
+	.confidencetxt{
+	
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 109px;
+	text-transform: uppercase;
+
+	}
+	a { color: #fff; }
+}
+@media screen and (max-width: 375px){
+	.homeage-zindex{
+		z-index: 1;
+
+	}
+}
+
+.navLinkBg1{
+		background-color: #212529;
+		border-radius: 5px;
+		border-style: solid 1px;
+		border-color: #fff;
+		color: #fff;
+
+}
+.navLinkBg2{
+		background-color: #fff;
+		border-radius: 5px;
+		border-style:  1px solid;
+		border-color: #fff;
+		color: #212529;
+		
+}
+a { color: #212529; }
+a.white{
+	color: #fff;
+}
+.navIcon{
+	color:#212529; font-size:28px;
+	
+}
+
+.smallMargin{
+	margin-left: 1rem;
+
+}
+.footerTop{
+	margin-top: 4rem;
+	background-color: #212529;
+	color: #fff;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
