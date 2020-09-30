@@ -1,33 +1,23 @@
-import React, { Component } from "react";
-import { usePaystackPayment, PaystackButton, PaystackConsumer } from 'react-paystack';
-    
+import React from "react";
+import Rave  from 'react-flutterwave-rave';
+   
+  
 
-      const callback = (response) => {
-    		console.log(response); // card charged successfully, get reference here
-    	}
-    	const close = () => {
-    		console.log("Payment closed");
-    	}
-    	const getReference = () => {
-    		//you can put any unique reference implementation code here
-    		let text = "";
-    		let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=";
-    
-    		for( let i=0; i < 15; i++ )
-    			text += possible.charAt(Math.floor(Math.random() * possible.length));
-    
-    		return text;
-    	}
 export default function Payment(props){
 
+
 	const {myStateData} = props;
+	 const {callback} = props;
+    const {close} = props;
+    
+    
     const {backToOrderPage} = props;
 	const total_price_array = myStateData.products.map((value) =>(value.price));
 	
 	const total = total_price_array.reduce((val, accVal)=>(val+accVal));
-	console.log(total);
+
 	
-        const publicKey = 'testkeyisfake';
+        const public_key = "FLWPUBK_TEST-e1b726cf02f3bc077604f9c5b39d0e65-X";
    
     
 	
@@ -36,7 +26,7 @@ export default function Payment(props){
 		<div className ="card">
 			
 			<div className ="row">
-					<div className="col-sm padit"> <h2> Price summary </h2>
+					<div className="col-sm -4 padit"> <h2> Price summary </h2>
 					 <br/>
 					 
 					 <br/>
@@ -49,23 +39,28 @@ export default function Payment(props){
 					 <br/>
 
 
-					 </div>
-					<div className="col-sm"> 
+					
 
-         <p >
-              <PaystackButton
-                text="Make Payment"
-                className ="btn btn-primary backToHome"
-                callback={callback}
-                close={close}
-                reference={getReference()}
-                email={myStateData.email}
-                amount={total}
-                paystackkey={publicKey}
-              />
-            </p>
-              <button className ="btn btn-secondary" onClick ={backToOrderPage}> Edit order</button>
-            </div>
+         
+              <button className ="btn btn-secondary smallMarginRight" 
+              onClick ={backToOrderPage}> Edit order</button>
+           <Rave className="btn btn-primary"
+          pay_button_text="Continue to payment"
+          class="button btn btn-primary"
+          metadata={[
+            { metaname: 'Name', metavalue: myStateData.fullName },
+            { metaname: 'Zone', metavalue: myStateData.zone},
+            { metaname: 'Address', metavalue: myStateData.deliveryAddress},
+             { metaname: 'Phone_Number', metavalue: myStateData.phoneNumber}
+          ]}
+          payment_method="card"
+          customer_email={myStateData.email}
+          customer_phone={myStateData.phoneNumber}
+          amount={"" + total + ""}
+          ravePubKey={public_key}
+          callback={callback}
+          onclose={close} />
+</div>
 			 </div> 
 
 		 </div>);

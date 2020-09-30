@@ -1,12 +1,15 @@
+
 import React, {Component} from 'react';
 
 import Product from './productdrop';
-import AddToCart from './addtocart';
 import UnsignedinCustomerDetails from './unsignedincustomerdetails';
 import PlaceOrderPageSignUp from './place_order_page_signup';
 import Payment from './paymentone';
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
-import {fuel_price,fuel_quantity,gas_price,gas_quantity,diesel_price,diesel_quantity} from './products_dropdown';
+import {Route, BrowserRouter, Switch} from 'react-router-dom';
+import OrderHistory from "./orderhistory";
+import ProductSignedIn from "./signedinproductdrops";
+import Rave, { VerifyTransaction } from 'react-flutterwave-rave';
+import {fuel_price,fuel_quantity,gas_price,gas_quantity,diesel_price,diesel_quantity} from './productprices';
 class PlaceOrderPage extends Component {
 	state ={
 		count:1,
@@ -21,22 +24,62 @@ class PlaceOrderPage extends Component {
          checked:false,
          password:"",
          confirmPassword:"",
-         signedIn:false
+         signedIn:false,
+         paid:false,
 	};
-	
 
+	//payment callback
+  callback = (response) => {
+    
+    return VerifyTransaction({ live: false, txref: response.tx.txRef, SECKEY: "FLWSECK_TEST-690e150e73bd8296a6d00d9439d5d15a-X" })
+    .then(function (resp) {
+      // console.log(resp);
+  var chargeResponse = resp.data.data.flwMeta.chargeResponse;
+  var chargeAmount = resp.data.data.amount;
+  var chargeCurrency = resp.data.data.transaction_currency;
+ 
+ 
+  if ((chargeResponse == "00" || chargeResponse == "0")) {
+    return chargeResponse;      
+    //Give Value and return to Success page
+  } else {
+    console.log("Error");
+    console.log(resp);}
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+    
+  } 
+ 
+ 
+  close = () => {
+    this.nextStep();
+  }
+   
 	//nextStep function
 	nextStep = () => {
 		let { count } =this.state;
 		this.setState({count:count+=1});
 
 	};
+  paid = () => {
+    let { paid} =this.state;
+    this.setState({paid:!paid});
+
+  };
 	//prevStep function
 	prevStep = () => {
 		let { count } =this.state;
 		this.setState({count:count-=1});
 
 	};
+  userSignIn =() =>{
+    let {signedIn} =this.state;
+    this.setState({signedIn:!signedIn});
+
+  }
 	//product input change handler
 	productInputChange =(e,index) =>{
 		const {name, value}  =e.target;
@@ -121,6 +164,7 @@ class PlaceOrderPage extends Component {
 	//Signup checkbox handler
 	handleSignUpCheckBoxChange = () =>{
 		this.setState({checked:!this.state.checked});
+
 	};
 	render(){
 		const {count, signedIn} =this.state;
@@ -130,13 +174,16 @@ class PlaceOrderPage extends Component {
 		
 			switch(count){
 				case 1: if(signedIn){
+
 					return(
 			<div className ="order_form_inner">
-             <Product  productInputChange ={this.
-             productInputChange} handleRemoveClick ={this.handleRemoveClick}
-             handleAddClick ={this.handleAddClick} myStateData ={this.state}/>
-             <UnsignedinCustomerDetails shoperPersonalDetailsHandler ={this.shoperPersonalDetailsHandler}/>
-             
+             <ProductSignedIn 
+             nextStep = {this.nextStep}
+             productInputChange ={this.productInputChange} 
+             handleRemoveClick ={this.handleRemoveClick}
+             handleAddClick ={this.handleAddClick} myStateData ={this.state}
+             shoperPersonalDetailsHandler ={this.shoperPersonalDetailsHandler}
+             />
           </div>);
 				}
 
@@ -148,14 +195,21 @@ class PlaceOrderPage extends Component {
              handleRemoveClick ={this.handleRemoveClick}
              handleAddClick ={this.handleAddClick} myStateData ={this.state}
              shoperPersonalDetailsHandler ={this.shoperPersonalDetailsHandler}
-             handleSignUpCheckBoxChange ={this.handleSignUpCheckBoxChange}/>
+             handleSignUpCheckBoxChange ={this.handleSignUpCheckBoxChange}
+             userSignIn ={this.userSignIn}/>
+            
              
              
           
               </div>);
 				}
 			
-				case 2: return <Payment myStateData ={this.state} backToOrderPage = {this.prevStep}/>;
+				case 2: return <Payment  
+                            callBack ={this.callback} 
+                            close ={this.close} 
+                            myStateData ={this.state} 
+                            backToOrderPage = {this.prevStep}/>;
+        case 3: return <OrderHistory   myStateData ={this.state} />;
 			}
 
             

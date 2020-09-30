@@ -32,6 +32,7 @@ body{
 	
 }
 
+
 nav{
 
 	height: 75px;
@@ -419,9 +420,10 @@ footer img {
 .checkout {
 	position: relative;
 	margin-right: 1rem;
+	padding-right: 1rem;
 	margin-bottom: 4em;
 	float: right;
-	margin-top: 2em;
+	margin-top: 1rem;
 	}
 .form_input >input {
 	background: #FFFFFF;
@@ -578,13 +580,15 @@ color: #000000;
 
 }
 .haykpo-btn{
-	background: #151D26;
+	background-color: #151D26;
 	color: #ffffff;
+	border-radius: 5px;
 }
 .padit{
 	padding-left: 2rem;
 	color: #fff;
 	background-color: #151d26;
+	text-align: center;
 }
 .paybg{
 	background-color: #d3d4d6;
@@ -676,6 +680,10 @@ a.white{
 	margin-left: 1rem;
 
 }
+.btn.smallMarginRight{
+	padding-right: 5px;
+
+}
 .footerTop{
 	margin-top: 4rem;
 	background-color: #212529;
@@ -688,4 +696,13 @@ a.white{
 }
 span.getHistory{
 	padding-left: 15px;
+}
+.order-success{
+	background: green;
+	color: #fff;
+
+}
+.order-fail{
+	background-color: red;
+	color: #fff;
 }

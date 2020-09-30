@@ -8,7 +8,7 @@ export const gas_price       = '350';
 export const gas_quantity    = '1';
 export const diesel_price    = '200';
 export const diesel_quantity = '1';
-function Product(props) {
+function ProductSignedIn(props) {
 
   const { register, handleSubmit, watch, errors, getValues } = useForm();
   const {handleAddClick} = props;
@@ -18,83 +18,22 @@ function Product(props) {
   
   const {myStateData }  = props;
   const { nextStep }    = props;
-  const {userSignIn}    =props;
 
   const { handleRemoveClick} = props;
   const {shoperPersonalDetailsHandler} =props;
   const {handleSignUpCheckBoxChange} =props;
    const onSubmit = data =>{
-
           console.log(data);
-            userSignIn();
-            nextStep();
-
+          this.setState({signedIn:!myStateData.signedIn});
+          this.nextStep();
+          
          }
-  const showSignup = myStateData.checked ?
-   <div>
-        
-        <div className ="form-row form-margin place-order-signup">
-            <div className ="col">
-                <input type ="password" placeholder =" Create Password" 
-                    className ="form-control" name ="password" 
-                    onChange ={shoperPersonalDetailsHandler} 
-                    ref={register({
-                      required: "Password  is required",})}/>
-                     {errors.password && (
-                     <p style={{ color: "red" }}>{errors.password.message}</p>
-                    )}
-                    
-            </div>
-            
-        </div>
-
-        <div className ="form-row form-margin place-order-signup">
-            <div className ="col">
-                   <input type ="password" name ="confirmPassword" 
-                           placeholder ="Confirm Password" className ="form-control" 
-                           onChange ={shoperPersonalDetailsHandler}
-                            ref={register({
-                            required: "Password confirmation is required",
-                            validate: {
-                            matchesPreviousPassword: (value) => {
-                           const { password } = getValues();
-                           return password === value || 'Passwords should match!';
-                    },},})}/>
-                                
-                {errors.confirmPassword && (
-                  <p style={{ color: "red" }}>{errors.confirmPassword.message}</p>
-                 )}
-            </div>
-            
-        </div>
-        <div className ="form-row form-margin place-order-signup-btn">
-                <input type ="submit" onClick ={handleSubmit(onSubmit)} value ="Sign up and proceed to checkout" className ="  haykpo-btn"/>
-        </div>
-
-    </div>
-    :<React.Fragment>
-            <Link to="/">
-                  <button 
-                      className="backToHome haykpo-btn">
-                      Back
-                  </button>
-            </Link>
-            <div 
-                className ="form-row  checkout" 
-                onClick ={handleSubmit(nextStep)}>
-                <span>Proceed To Checkout</span>
-            <img 
-                src ="images/checkout_arrow.png" 
-                type= "submit" alt = "proceed to checkout"
-            />
-
-            </div>
-      </React.Fragment>;
+ 
   return (
        <React.Fragment>
     <div className="App">
      <div className ="form-row form-margin">
-        <div className = "col"><label  >Select Product</label></div>
+        <div className = "col"><label  >Product</label></div>
             
               
         <div className = "col"><label  >Amount(NGN)</label></div>
@@ -107,9 +46,8 @@ function Product(props) {
           <React.Fragment>
               <div className ="form-row form-margin"  key ={i} >
                   <div className="col">
-                      <select name="product" className ="form-control"  value ={x.product} 
+                      <select name="product" className ="form-control" value ={x.product} 
                               onChange={e => handleInputChange(e, i)}>
-
                           <option   value = "fuel">Fuel</option>
                           <option   value = "gas">Gas</option>
                           <option   value = "diesel">Diesel</option>
@@ -119,17 +57,11 @@ function Product(props) {
                       <input className ="form-control" name="price" placeholder=""  value={x.price} onChange={e => handleInputChange(e, i)} type="number" />
                   </div>
                   <div className="col"> 
-                      <input className ="form-control" name="quantity" placeholder="Enter" value={x.quantity} onChange={e => handleInputChange(e, i)} 
-                            type="number" ref={register({ min: 5,  required: "quantity should be upto 5"})}/>
-                             {x.quantity <5 && (
-                              <p style={{ color: "red" }}>Quantity should be upto 5</p>
-                    )}
-                    <br/>
-
+                      <input className ="form-control" name="quantity" placeholder="Enter" value={x.quantity} onChange={e => handleInputChange(e, i)} type="number" ref={register({ min: 5})}/>    
                   </div>
                   <div className="col">
-                      {myStateData.products.length!==1 && <input type ="button" value ="-" className ="btn btn-danger" onClick={() => handleRemoveClick(i)} />}
-                      {myStateData.products.length-1==i && myStateData.products.length < 3 && <input type ="button" value ="+" className ="btn btn-success" onClick={handleAddClick}/>}
+                      {myStateData.products.length!==1 && <input type ="button" value ="-" className ="btn" onClick={() => handleRemoveClick(i)} />}
+                      {myStateData.products.length-1==i && myStateData.products.length < 3 && <input type ="button" value ="+" className ="btn" onClick={handleAddClick}/>}
                   </div>
           
               </div>
@@ -225,19 +157,26 @@ function Product(props) {
         </React.Fragment>
         <React.Fragment>
             <div className ="form-row form-margin ">
-                <div className ="col"> 
-                <label className ="container "> <span className ="getHistory"> Sign up to get your purchase history</span>
-                    <input type= "checkbox"
-                    checked ={ myStateData.checked}
-                    onChange ={ handleSignUpCheckBoxChange }/>
-                   <span className ="checkmark"></span>
-                </label>
-                </div>
+
                
             </div>
-            { showSignup }
-        </React.Fragment></React.Fragment> )};
+            <Link to="/">
+                  <button 
+                      className="backToHome haykpo-btn">
+                      Back
+                  </button>
+            </Link>
+            <div 
+                className ="form-row  checkout" 
+                onClick ={handleSubmit(nextStep)}>
+                <span>Proceed To Checkout</span>
+            <img 
+                src ="images/checkout_arrow.png" 
+                type= "submit" alt = "proceed to checkout"
+            />
+
+            </div>        </React.Fragment></React.Fragment> )};
 
 
 
-export default Product;
+export default ProductSignedIn;
