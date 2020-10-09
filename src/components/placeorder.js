@@ -2,14 +2,11 @@
 import React, {Component} from 'react';
 
 import Product from './productdrop';
-import UnsignedinCustomerDetails from './unsignedincustomerdetails';
-import PlaceOrderPageSignUp from './place_order_page_signup';
 import Payment from './paymentone';
-import {Route, BrowserRouter, Switch} from 'react-router-dom';
 import OrderHistory from "./orderhistory";
 import ProductSignedIn from "./signedinproductdrops";
-import Rave, { VerifyTransaction } from 'react-flutterwave-rave';
-import {fuel_price,fuel_quantity,gas_price,gas_quantity,diesel_price,diesel_quantity} from './productprices';
+import  { VerifyTransaction } from 'react-flutterwave-rave';
+import {fuel_price,fuel_quantity,gas_price,diesel_price} from './productprices';
 class PlaceOrderPage extends Component {
 	state ={
 		count:1,
@@ -35,11 +32,10 @@ class PlaceOrderPage extends Component {
     .then(function (resp) {
       // console.log(resp);
   var chargeResponse = resp.data.data.flwMeta.chargeResponse;
-  var chargeAmount = resp.data.data.amount;
-  var chargeCurrency = resp.data.data.transaction_currency;
+
  
  
-  if ((chargeResponse == "00" || chargeResponse == "0")) {
+  if ((chargeResponse === "00" || chargeResponse === "0")) {
     return chargeResponse;      
     //Give Value and return to Success page
   } else {
@@ -210,6 +206,8 @@ class PlaceOrderPage extends Component {
                             myStateData ={this.state} 
                             backToOrderPage = {this.prevStep}/>;
         case 3: return <OrderHistory   myStateData ={this.state} />;
+
+        default: return ""
 			}
 
             

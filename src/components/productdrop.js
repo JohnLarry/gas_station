@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 //declear the price per litre for fuel and diesel and 1KG for gas
@@ -10,7 +10,7 @@ export const diesel_price    = '200';
 export const diesel_quantity = '1';
 function Product(props) {
 
-  const { register, handleSubmit, watch, errors, getValues } = useForm();
+  const { register, handleSubmit, errors, getValues } = useForm();
   const {handleAddClick} = props;
 
 
@@ -129,7 +129,7 @@ function Product(props) {
                   </div>
                   <div className="col">
                       {myStateData.products.length!==1 && <input type ="button" value ="-" className ="btn btn-danger" onClick={() => handleRemoveClick(i)} />}
-                      {myStateData.products.length-1==i && myStateData.products.length < 3 && <input type ="button" value ="+" className ="btn btn-success" onClick={handleAddClick}/>}
+                      {myStateData.products.length-1===i && myStateData.products.length < 3 && <input type ="button" value ="+" className ="btn btn-success" onClick={handleAddClick}/>}
                   </div>
           
               </div>
@@ -141,7 +141,7 @@ function Product(props) {
        </div>
        <React.Fragment>
             <div >
-               <img src ="images/Ellipse.png"/> <span>Your details</span>
+               <img src ="images/Ellipse.png" alt ="pleceholder"/> <span>Your details</span>
             </div>
             
            

@@ -17,7 +17,7 @@ const OurPartners = () =>{
             <img src="images/cchub.png" alt ="cchub logo"/>
         </div>
         <div className ="col-sm-4">
-            <a href="#" className ="buynowFooter">Become A Partner</a>
+            <a href="/" className ="buynowFooter">Become A Partner</a>
         </div>
      </div>
         </React.Fragment>

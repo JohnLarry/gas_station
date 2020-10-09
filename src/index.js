@@ -2,19 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Copyright from './components/footer'
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import { BrowserRouter, } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 
-const routing =(
-	<BrowserRouter>
-	<div>
-		<Route path ="/" component= {App} />
-		
 
-	</div>
-	</BrowserRouter>
-);
 ReactDOM.render(
   <BrowserRouter><App/>
   </BrowserRouter>,

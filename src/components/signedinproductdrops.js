@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 //declear the price per litre for fuel and diesel and 1KG for gas
@@ -10,7 +10,7 @@ export const diesel_price    = '200';
 export const diesel_quantity = '1';
 function ProductSignedIn(props) {
 
-  const { register, handleSubmit, watch, errors, getValues } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const {handleAddClick} = props;
 
 
@@ -21,13 +21,13 @@ function ProductSignedIn(props) {
 
   const { handleRemoveClick} = props;
   const {shoperPersonalDetailsHandler} =props;
-  const {handleSignUpCheckBoxChange} =props;
-   const onSubmit = data =>{
+  //const {handleSignUpCheckBoxChange} =props;
+   /*const onSubmit = data =>{
           console.log(data);
           this.setState({signedIn:!myStateData.signedIn});
           this.nextStep();
           
-         }
+         }*/
  
   return (
        <React.Fragment>
@@ -61,7 +61,7 @@ function ProductSignedIn(props) {
                   </div>
                   <div className="col">
                       {myStateData.products.length!==1 && <input type ="button" value ="-" className ="btn" onClick={() => handleRemoveClick(i)} />}
-                      {myStateData.products.length-1==i && myStateData.products.length < 3 && <input type ="button" value ="+" className ="btn" onClick={handleAddClick}/>}
+                      {myStateData.products.length-1===i && myStateData.products.length < 3 && <input type ="button" value ="+" className ="btn" onClick={handleAddClick}/>}
                   </div>
           
               </div>
@@ -73,7 +73,7 @@ function ProductSignedIn(props) {
        </div>
        <React.Fragment>
             <div >
-               <img src ="images/Ellipse.png"/> <span>Your details</span>
+               <img src ="images/Ellipse.png" alt ="pleceholder"/> <span>Your details</span>
             </div>
             
            

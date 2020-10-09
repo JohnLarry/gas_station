@@ -5,12 +5,12 @@ const HowItWorks = ()=>{
         <React.Fragment>
         
 <div className=" how-it-works-rect">
-	<img src="images/Rectangle.png"/>
+	<img src="images/Rectangle.png" alt ="pleceholder"/>
 	<span className="getfuel">How it works</span></div>
 <div className="row smallMargin">
 		
 			<div className="col-sm-4 square ">
-				<img src="images/arrow-right.png"/><p>Click "Buy now"</p>
+				<img src="images/arrow-right.png" alt ="buy now "/><p>Click "Buy now"</p>
 			</div>
 			
 
@@ -18,12 +18,12 @@ const HowItWorks = ()=>{
 
 		
 		<div className="col-sm-4 square" >
-			 <img src="images/rectangle-tool.png"/> <p>Fill in the necessary details </p>
+			 <img src="images/rectangle-tool.png" alt ="pleceholder"/> <p>Fill in the necessary details </p>
 		</div>
 		
 
 		<div className="col-sm-4 square"> 
-			<img src="images/truck.png"/><p>Await Delivery</p>
+			<img src="images/truck.png" alt ="pleceholder"/><p>Await Delivery</p>
 			</div>
 		
 	</div>

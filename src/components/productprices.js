@@ -1,5 +1,3 @@
-import React from "react";
-
 
 	export const fuel_price =150;
 	export const fuel_quantity =1;

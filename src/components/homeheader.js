@@ -11,7 +11,7 @@ const HomeHeader = () =>{
                   
 <nav class="navbar navbar-expand-lg ">
 
- <Link  to ="/" className="nav-link " > <a class="navbar-brand" href="#"><img src="images/logo.svg"/></a></Link>
+ <Link  to ="/" className="nav-link " > <a class="navbar-brand" href="/"><img src="images/logo.svg" alt ="logo"/></a></Link>
   <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon">
     <i className="fas fa-bars navIcon" ></i></span>
@@ -24,7 +24,7 @@ const HomeHeader = () =>{
       <Link  to ="/order" className="nav-link " > 
       </Link></li>
    <li className="nav-item mobile-nav-style "> <Link  to ="/" >
-        Home </Link>
+         </Link>
       </li>
      
 
@@ -33,27 +33,27 @@ const HomeHeader = () =>{
 <li className="nav-item mobile-nav-style">     
  <Link  to ="/fag" >
        
-          FAQ 
+          
         </Link>
         
       </li>
       
      <li className="nav-item mobile-nav-style"> <Link  to ="/contact" >
-        Contact </Link>
+         </Link>
       </li>
       
             
        <li className ="list-no-style partner-signin mobile-nav-style"> 
        <Link className="#" to ="/partner_signin" ><span>
 
-        Partner Sign In</span>
+        </span>
         </Link>
         </li>
             
      
      <li className ="list-no-style customer-signin white mobile-nav-style">
      <Link  className="white" to = "/customer_signin" > 
-     Customer Sign In </Link></li>
+     </Link></li>
     
     </ul>
     
@@ -82,7 +82,7 @@ const HomeHeader = () =>{
 	   <div className="col">
     		  <div className="">
 
-                 <img  src="images/Rectangle.png"/>
+                 <img  src="images/Rectangle.png" alt ="pleceholder"/>
                  <span className="">Get fuel delivered to your door </span>
                  <span className="mobile-confidencetxt"> step with </span>
 
