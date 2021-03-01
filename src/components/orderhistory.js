@@ -30,7 +30,7 @@ export default function OrderHistory(props){
   		
 					<div className ="card">
 			
-			<div className ="row">
+			<div >
 
 					
 					 <div className="order-summary"><h3>Product</h3> <h3>Quantity</h3> <h3>Amount </h3></div>
