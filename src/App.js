@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import HomeHeader from './components/homeheader';
-import HowItWorks from './components/how_it_works';
-import Features from './components/features';
-import OurPartners from './components/ourpartners';
+
+
 import Footer from './components/footer';
 import PlaceOrderPage from './components/placeorder';
 import Fag from "./components/fag";
+import OrderHistory from "./components/orderhistory";
 import {Route, BrowserRouter} from 'react-router-dom';
 function App() {
           
@@ -20,9 +20,7 @@ function App() {
         <Route path ="/" exact>
           
         <HomeHeader/>
-        <HowItWorks/>
-        <Features/>
-        <OurPartners/>
+       
         <Footer/>
 
         </Route>
@@ -38,6 +36,7 @@ function App() {
           </div>
         </div>
         </Route>
+        
         <Route path ="/fag">
         <Fag />
         <Footer/>

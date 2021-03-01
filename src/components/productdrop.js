@@ -15,7 +15,7 @@ function Product(props) {
 
 
   const handleInputChange  = props.productInputChange;
-  
+
   const {myStateData }  = props;
   const { nextStep }    = props;
   const {userSignIn}    =props;

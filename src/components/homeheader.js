@@ -1,114 +1,122 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-
-const HomeHeader = () =>{
-    return(
-        <React.Fragment>
-        <div className="header">
+const HomeHeader = () => {
+  return (
+    <React.Fragment>
+      <div className="header">
+        
+        <div className="content">
+          <div>
+              <img src="images/Rectangle.png" alt="pleceholder" />
+              <span className="getfueltxt">Get fuel delivered to your door step with</span>
+           </div>
+         
+                <h5 className ="confidencetxt" >confidence</h5>
             
-                    
-                  
-<nav class="navbar navbar-expand-lg ">
+             <div className="order-button-div"> <Link  to="/order" className="buynow">
+                buy now
+              </Link></div>
+          
+          </div>
 
- <Link  to ="/" className="nav-link " > <a class="navbar-brand" href="/"><img src="images/logo.svg" alt ="logo"/></a></Link>
-  <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon">
-    <i className="fas fa-bars navIcon" ></i></span>
-  </button>
+                <div className="image-box">
 
-  <div class="collapse navbar-collapse "  id="navbarSupportedContent">
-   
-    <ul className="navbar-nav  nav-items nav-bg">
-      <li className="nav-item navLink">
-      <Link  to ="/order" className="nav-link " > 
-      </Link></li>
-   <li className="nav-item mobile-nav-style "> <Link  to ="/" >
-         </Link>
-      </li>
-     
+                <img src ="images/fuel_pump.png" alt="fuel_pump_handle"/>
+        </div>
+  
+
+
+      </div>
+
+
+
+        
+<div className=" how-it-works-rect">
+  <img src="images/Rectangle.png" alt ="pleceholder"/>
+  <span className="getfuel">How it works</span></div>
+<div className="square-holder">
+    
+      <div className=" square ">
+        <img src="images/arrow-right.png" alt ="buy now "/>
+        <p>Click "Buy now"</p>
+      </div>
+      
 
   
-      
-<li className="nav-item mobile-nav-style">     
- <Link  to ="/fag" >
-       
-          
-        </Link>
-        
-      </li>
-      
-     <li className="nav-item mobile-nav-style"> <Link  to ="/contact" >
-         </Link>
-      </li>
-      
-            
-       <li className ="list-no-style partner-signin mobile-nav-style"> 
-       <Link className="#" to ="/partner_signin" ><span>
 
-        </span>
-        </Link>
-        </li>
-            
-     
-     <li className ="list-no-style customer-signin white mobile-nav-style">
-     <Link  className="white" to = "/customer_signin" > 
-     </Link></li>
     
-    </ul>
+    <div className="square" >
+       <img src="images/rectangle-tool.png" alt ="pleceholder"/> 
+       <p>Fill in the necessary details </p>
+    </div>
+    
+
+    <div className=" square"> 
+      <img src="images/truck.png" alt ="pleceholder"/>
+      <p>Await Delivery</p>
+      </div>
     
   </div>
-</nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-        
-    <div className="row row1top homeage-zindex">
-	   <div className="col">
-    		  <div className="">
-
-                 <img  src="images/Rectangle.png" alt ="pleceholder"/>
-                 <span className="">Get fuel delivered to your door </span>
-                 <span className="mobile-confidencetxt"> step with </span>
-
-
-    	       </div>
-	       <div className=" row homeage-zindex">
-                <div className ="col "> 
-                <span className ="confidencetxt">confidence</span>
-                </div>
-            </div>
-
-	<div className="row bn homeage-zindex">
-
-	  <Link className="buynow" to="/order">buy now</Link></div>
-	</div>
-
-	
-</div>
-
-            
-
-        </div>
-        </React.Fragment>
-    )
     
-}
 
+        <div className=" how-it-works-rect">
+  <img src="images/Rectangle.png" alt ="pleceholder"/>
+     <span className="getfuel"> Features</span>
+     </div>
+     
+     
+    
+
+  <div className ="square-holder">
+     <div className ="  square ">
+      
+          <img src="images/tap.png" alt ="pleceholder"/>
+          <p>Easy to use</p>
+      
+    </div>
+    <div className =" square">
+      
+          <img src="images/runer-silhouette-running-fast.png" alt ="pleceholder"/>
+          <p>Fast Delivery</p>
+      
+    </div>
+    <div className ="  square ">
+      
+          <img src="images/piggy-bank.png" alt ="pleceholder"/>
+          <p>Cost free</p>
+    
+    </div>
+  </div>
+
+
+<div className="how-it-works-rect">
+          <img src="images/Rectangle.png" alt ="start of our partners section"/>
+            <span className="getfuel">our partners </span>
+</div>
+  <div className="our-partners ">
+
+
+
+        
+          <img src="images/enyo.png" alt ="enyo logo"/>
+     
+
+       
+            <img src="images/cchub.png" alt ="cchub logo"/>
+       
+            <a href="/" >Become A Partner</a>
+      
+     </div>
+
+
+
+
+
+
+
+    </React.Fragment>
+  );
+};
 
 export default HomeHeader;

@@ -8,22 +8,30 @@ import ProductSignedIn from "./signedinproductdrops";
 import  { VerifyTransaction } from 'react-flutterwave-rave';
 import {fuel_price,fuel_quantity,gas_price,diesel_price} from './productprices';
 class PlaceOrderPage extends Component {
-	state ={
+  constructor(props){
+    super(props);
+     
+  
+	this.state ={
 		count:1,
+    
 		products:[{ product:"fuel",
                     price:fuel_price,
                     quantity:fuel_quantity },],
-         fullName:"",
-         email:"",
-         phoneNumber:"",
-         deliveryAddress:"",
-         zone:"",
-         checked:false,
-         password:"",
-         confirmPassword:"",
-         signedIn:false,
-         paid:false,
-	};
+   fullName:"",
+   email:"",
+   phoneNumber:"",
+   deliveryAddress:"",
+   zone:"",
+   checked:false,
+   password:"",
+   confirmPassword:"",
+   signedIn:false,
+   paid:false,
+	}
+  this.callback = this.callback.bind(this);
+    this.close = this.close.bind(this);
+};
 
 	//payment callback
   callback = (response) => {
@@ -36,9 +44,12 @@ class PlaceOrderPage extends Component {
  
  
   if ((chargeResponse === "00" || chargeResponse === "0")) {
+     
+   this.setState({paid:true});
     return chargeResponse;      
     //Give Value and return to Success page
   } else {
+    
     console.log("Error");
     console.log(resp);}
     })

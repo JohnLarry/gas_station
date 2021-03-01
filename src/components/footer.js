@@ -12,7 +12,7 @@ return(
 					<p>Here for you. Here to</p>
 					<p> stay!</p>
 				</div>
-				<div> 
+				<div className ="social-div"> 
 					<img src="images/facebook.png" alt ="facebook logo"/>	
 					<img src="images/twitter.png" alt ="twitter logo"/>
 					<img src="images/instagram.png" alt = "instagram logo"/>

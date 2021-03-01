@@ -18,9 +18,7 @@ export default function OrderHistory(props){
 			  <li className="nav-item">
 			    <Link className="nav-link " to ="/order">Your Recent Order</Link>
 			  </li>
-			  <li className="nav-item">
-			    <Link className="nav-link" to ="/order-history">Order History</Link>
-			  </li>
+			 
  
   		</ul>
   		<Route path ="/order">
@@ -30,17 +28,22 @@ export default function OrderHistory(props){
   		{!myStateData.paid && <p className ="order-fail"> Your order failed</p> }
   		</div>
   		
-					<div className="col-sm -4 padit"> <h2> Price summary </h2>
-					 <br/>
-					 
-					 <br/>
-					 <br/>
+					<div className ="card">
+			
+			<div className ="row">
+
+					
+					 <div className="order-summary"><h3>Product</h3> <h3>Quantity</h3> <h3>Amount </h3></div>
 					 { myStateData.products.map((value, index)=>(
-					 	<h4 key ={index}>{value.quantity}{ value.product ===("fuel"||"diesel") && "Ltrs"} of {value.product} - N{value.price}  </h4>
+					 	<div className="order-summary">
+					 	<h3>{value.product}</h3><h3>{value.quantity}</h3> <h3>N{value.price}</h3></div>
+					 	
 					 ))}
 					 <br/>
 					 <h2>  Total  - N {total2} </h2>
-					 <br/></div>
+					 <br/></div></div>
+
+
   		</Route>
   		<Route path ="/order-history" exact>
 
