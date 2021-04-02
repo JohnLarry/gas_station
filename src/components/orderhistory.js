@@ -11,7 +11,7 @@ export default function OrderHistory(props){
 
 
 	return( 
-		<div> 
+		<div className ="panel"> 
 		<Router>
 
 		<ul className="nav nav-tabs">
@@ -23,24 +23,21 @@ export default function OrderHistory(props){
   		</ul>
   		<Route path ="/order">
   		
-  			<div> 
-  		{myStateData.paid && < p className ="order-success"> Your order was successfull</p> }
-  		{!myStateData.paid && <p className ="order-fail"> Your order failed</p> }
-  		</div>
+  			
   		
-					<div className ="card">
+					<div >
 			
 			<div >
 
 					
-					 <div className="order-summary"><h3>Product</h3> <h3>Quantity</h3> <h3>Amount </h3></div>
+					 <div className="order-summary"><h3></h3><h3>Product</h3> <h3>Quantity</h3> <h3>Amount </h3></div>
 					 { myStateData.products.map((value, index)=>(
 					 	<div className="order-summary">
-					 	<h3>{value.product}</h3><h3>{value.quantity}</h3> <h3>N{value.price}</h3></div>
+					 	<h3>{myStateData.paid?"Sucessful":"X"}</h3><h3>{value.product}</h3><h3>{value.quantity}</h3> <h3>N{value.price}</h3></div>
 					 	
 					 ))}
 					 <br/>
-					 <h2>  Total  - N {total2} </h2>
+					 <div className="moveleft"> <p>total  - N {total2} </p></div>  
 					 <br/></div></div>
 
 
@@ -55,7 +52,7 @@ export default function OrderHistory(props){
   		
 
 		</Router>	
-		<Link to ="/" className ="haykpo-btn">Back to home</Link>
+		<p><Link to ="/" className ="haykpo-btn">Back to home</Link></p>
 		
 		</div>
 		);

@@ -8,6 +8,9 @@ import PlaceOrderPage from './components/placeorder';
 import Fag from "./components/fag";
 import OrderHistory from "./components/orderhistory";
 import {Route, BrowserRouter} from 'react-router-dom';
+import Login from "./upzo/login";
+import Homev from "./components/home";
+import AngleDiv from "./components/anglediv";
 function App() {
           
   return (
@@ -18,6 +21,7 @@ function App() {
         {/*--Homepage router */}
 
         <Route path ="/" exact>
+         
           
         <HomeHeader/>
        
@@ -37,6 +41,9 @@ function App() {
         </div>
         </Route>
         
+         <Route path ="/login">
+        <Login/>
+        </Route>
         <Route path ="/fag">
         <Fag />
         <Footer/>

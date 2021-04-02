@@ -1,4 +1,4 @@
-
+	
 *,*::before,*::after{
   box-sizing: border-box;
 
@@ -12,14 +12,30 @@ body{
      overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
+.headerr {
+	background: yellow;
 
+}
+.headerr:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 1000px);
+  left: 0;
+  width: 500px;
+  height:2000px;
+  background: #000;
+  transform: skew(35deg);
+  transform-origin:top;
+}
 .header{
 
-    height:90vh ;
+    
     width: 100%;
 	position:relative;
 	display: flex;
-	transform: translate(100px,0px);
+	-webkit-transform: translate(100px,0px);
+	-moz-transform: translate(100px,0px);
+	-ms-transform: translate(100px,0px);
 	margin-bottom:5px;
 	
 	}
@@ -36,17 +52,18 @@ body{
 }
 
 .image-box{
-	width: calc(50% + 50px);
+	width: calc(50%);
 	height: 100%;
 	background:#212529;
 	box-sizing: border-box;
-	border-left: 20em solid #fff;
-	border-bottom: 30em solid transparent;
+	
+
 }
 
-.image-box >img {
+.image-box>img {
 
-	transform: translate(-20em,0px) ;
+transform: translateX(-12em);
+	
 }
 
 .hiw{
@@ -189,7 +206,7 @@ text-decoration: none;
 .order-button-div a:hover{
 	
 	text-decoration: none;
-	color: #fff;
+	color: #151D26;
 
 }
 
@@ -218,10 +235,10 @@ text-decoration: none;
 }
 .confidencetxt{
 	
-	margin-left: 26px;
+	margin-left: 22px;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 70px;
+	font-size: 60px;
 	line-height: 109px;
 	text-transform: uppercase;
 
@@ -233,16 +250,16 @@ text-decoration: none;
 .buynow {
 	width: 10em;
 	padding: 10px 10px;
-	background: #F43132;
+	background: #Fff;
 	box-shadow: 0px 4.20968px 26.3105px rgba(0, 0, 0, 0.1);
 	border-radius: 21.0484px;
 	align-content: center;
-	text-decoration-color: red;
+	text-decoration-color:#151D26;;
 	text-transform: uppercase;
 	text-align: center;
 	margin-left: 1em;
 	font-size: 21px;
-	color:  #ffffff;
+	color:  #151D26;
 
 
 }
@@ -273,17 +290,7 @@ text-decoration: none;
 	color: #151D26;
 
 }
-.pump-handle{
-	background-image: url('../images/fuel_pump.png');
 
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 600px;
-	height: 450px;
-	position: left center;
-
-
-}
 
 .bgseethrough{
 	background-color: rgba(255,255,255,0.85);
@@ -452,7 +459,7 @@ footer img {
 	padding-right: 1rem;
 	margin-bottom: 4em;
 	float: right;
-	margin-top: 1rem;
+	
 	}
 .form_input >input {
 	background: #FFFFFF;
@@ -632,7 +639,7 @@ color: #000000;
 }
 
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 440px){
 	.nav-bg{
 		position:absolute;
 		background-color: #212529;
@@ -682,11 +689,63 @@ color: #000000;
 	box-shadow: 0px 4px 50px rgba(45, 156, 219, 0.15);
 }
 }
-@media screen and (max-width: 375px){
-	.homeage-zindex{
-		z-index: 1;
+@media only screen and (max-width: 420px){
+	
+.header{
+
+    
+    width: 100%;
+	position:relative;
+	display: flex;
+	flex-direction: column;
+	-webkit-transform: translate(0px,0px);
+	-moz-transform: translate(0px,0px);
+	-ms-transform: translate(0px,0px);
+
+
+	
+	}
+.content{
+	width: calc(100%);
+	height: 100%;
+	background:#fff;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 5em;
+
+	
+}
+
+.image-box{
+
+	width: calc(100%);
+	height: 90%;
+	background:#212529;
+	box-sizing: border-box;
+	
+
+}
+
+.image-box>img {
+
+	transform: translateX(-6em) scale(0.6);
+	max-width: fit-content;
+	height: auto;
+	
+}
+.confidencetxt{
+	text-align: center;
+	}
+	
+	.getfueltxt{
+		text-align: center;
+		display: block;
 
 	}
+
+	
 }
 
 .navLinkBg1{
@@ -749,15 +808,67 @@ span.getHistory{
 	display: flex;
 	justify-content: space-around;
 	color: #212529;
-	background:#e1e1e1;
+
 	margin-top: 5px;
-	border-top: 2px solid #fff;
-	border-bottom: 2px solid #000;
+	border-bottom: 1px solid #dee2e6;
+	
+	
 }
 .order-summary h3{
+	font-size: small;
 	color: #212529;
 	
 }
 .btn{
 	margin-bottom: 5px;
 }
+.moveleft{
+
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 1rem;
+}
+.leftpadp{
+	padding-left: 1em;
+}
+
+.formerworking{
+	
+.header{
+
+    height:90vh ;
+    width: 100%;
+	position:relative;
+	display: flex;
+	transform: translate(100px,0px);
+	margin-bottom:5px;
+	
+	}
+.content{
+	width: calc(50%);
+	height: 100%;
+	background:#fff;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	
+}
+
+.image-box{
+	width: calc(50% + 50px);
+	height: 100%;
+	background:#212529;
+	box-sizing: border-box;
+	border-left: 20em solid #fff;
+	border-bottom: 30em solid transparent;
+}
+
+.image-box >img {
+
+	transform: translate(-20em,0px) ;
+}
+
+}
+

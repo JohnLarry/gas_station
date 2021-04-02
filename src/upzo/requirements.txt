@@ -1,0 +1,33 @@
+upzo the social contact
+keeping in touch at a distance
+
+a user can create account
+a user can delete account
+a user can edit his account
+a user has a unique link generated for his account
+a user can open a form and add/edit a contact to his account
+a user can edit, delete a contact he added
+a user can see and can share the unique link of a contact 
+a user can add a contact by accessing the unique link of a contact
+a user can send a direct message to a contact
+a user can subscribe to a contact social feed
+a user can make payment via bitcoin, ethereum, cash for his account
+a user can search for a contact by typing words relating to a contact
+we shall create a relating words map by concatenating every detail about a 
+contact into one sentence
+a user can change to any language of his choice
+when a user open another user profile beside every social link
+there will be a subscribe button for subscribing to the socail feed,
+there will be add button for adding to contact.
+a user can allow a company/entity to access his link for id verification
+a user can participate in buying a tokenizd asset
+a user can receive payment from a tokenized asset{
+buy a tokenized tsla, receive paymnt shares from  the car use
+from tesla. Tokenized car has a main wallet and chldren wallets
+whch has a prcentage of the main wallet , main wallet  receives payment
+and spreads it to children wallet.
+we partner with tsla buy a tesla through us get main wallet and child wallet for it. tokennize the tesla, get  subscribers, they each receive a child wallet. on the vehicle use payment  goes to the main wellet, a child 
+wallet can pay with his token
+
+
+

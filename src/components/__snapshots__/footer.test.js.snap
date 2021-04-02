@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test footer component check if snapshot match 1`] = `
+<div
+  className="row footerTop"
+>
+  <div
+    className="col smallMargin "
+  >
+    <div>
+      <h5>
+        Haykpo
+      </h5>
+      <p>
+        Here for you. Here to
+      </p>
+      <p>
+         stay!
+      </p>
+    </div>
+    <div
+      className="social-div"
+    >
+      <img
+        alt="facebook logo"
+        src="images/facebook.png"
+      />
+      <img
+        alt="twitter logo"
+        src="images/twitter.png"
+      />
+      <img
+        alt="instagram logo"
+        src="images/instagram.png"
+      />
+    </div>
+  </div>
+  <div
+    className="col"
+  >
+    <h4>
+      Products
+    </h4>
+    <p>
+      Petrol
+    </p>
+    <p>
+      Diesel
+    </p>
+    <p>
+      Gas
+    </p>
+  </div>
+  <div
+    className=" col"
+  >
+    <h3>
+      Company
+    </h3>
+    <p>
+      About
+    </p>
+    <p>
+      Contact
+    </p>
+    <p>
+      Our terms and conditions
+    </p>
+  </div>
+</div>
+`;

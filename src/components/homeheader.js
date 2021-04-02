@@ -7,22 +7,25 @@ const HomeHeader = () => {
       <div className="header">
         
         <div className="content">
-          <div>
-              <img src="images/Rectangle.png" alt="pleceholder" />
-              <span className="getfueltxt">Get fuel delivered to your door step with</span>
-           </div>
+              <div>
+                    <img src="images/Rectangle.png" alt="pleceholder" />
+                    <span className="getfueltxt">Get fuel delivered to your door
+                  step with</span>
+              </div>
          
                 <h5 className ="confidencetxt" >confidence</h5>
             
-             <div className="order-button-div"> <Link  to="/order" className="buynow">
-                buy now
-              </Link></div>
+              <div className="order-button-div"> <Link  to="/order" className="buynow">
+                    buy now
+                  </Link>
+              </div>
           
-          </div>
+        </div>
 
-                <div className="image-box">
+        <div className="image-box"> 
 
-                <img src ="images/fuel_pump.png" alt="fuel_pump_handle"/>
+                <img  src ="/images/fuel_pump.png" />
+               
         </div>
   
 

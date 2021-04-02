@@ -22,17 +22,17 @@ return(
 		
 		
 			<div className="col">
-					<h5>Products</h5>
+					<h4>Products</h4>
 					<p>Petrol</p>
 					<p>Diesel</p>
 					<p>Gas</p >
 			</div>
 			
 			<div className=" col">
-					<h5>Company</h5>
+					<h3>Company</h3>
 					<p>About</p>
 					<p>Contact</p>
-					<p>Terms and conditions</p>
+					<p>Our terms and conditions</p>
 			</div>
 		
 	</div>
