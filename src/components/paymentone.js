@@ -8,17 +8,12 @@ export default function Payment(props){
 
 	const {myStateData} = props;
 	 const {callback} = props;
-    const {close} = props;
-    
-    
-    const {backToOrderPage} = props;
-	const total_price_array = myStateData.products.map((value) =>(value.price));
-	
-	const total = total_price_array.reduce((val, accVal)=>(val+accVal));
-
-	
+        const {close} = props;
+        const {backToOrderPage} = props;
+        const total_price_array = myStateData.products.map((value) =>(value.price));
+        const total = total_price_array.reduce((val, accVal)=>(val+accVal))
         const public_key = "FLWPUBK_TEST-e1b726cf02f3bc077604f9c5b39d0e65-X";
-   
+
     
 	
 	return(
@@ -27,7 +22,7 @@ export default function Payment(props){
 			
 			<div className ="row">
 
-					//<div className="col-sm -4 padit"> 
+					<div className="col-sm -4 padit"> 
 					 <div className="order-summary"><h3>Product</h3> <h3>Quantity</h3> <h3>Amount </h3></div>
 					 { myStateData.products.map((value, index)=>(
 					 	<div className="order-summary">

@@ -22,11 +22,7 @@ const HomeHeader = () => {
           
         </div>
 
-        <div className="image-box"> 
-
-                <img  src ="/images/fuel_pump.png" />
-               
-        </div>
+        
   
 
 
